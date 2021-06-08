@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Proxy 在线代理加速</title>
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@renfeii"/>
+    <meta name="twitter:creator" content="@renfeii"/>
+    <meta property="og:url" content="https://github.renfei.net"/>
+    <meta property="og:title" content="GitHub Proxy 在线代理加速"/>
+    <meta property="og:description"
+          content="GitHub 文件 , Releases , archive , gist , raw.githubusercontent.com 文件代理加速下载服务."/>
+    <meta property="og:image" content="https://cdn.renfei.net/Logo/ogimage.png"/>
+    <link id="favicon" rel="shortcut icon" href="https://cdn.renfei.net/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" href="https://cdn.renfei.net/Logo/logo_192.png">
+    <link href="https://cdn.renfei.net/thunder/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.renfei.net/thunder/fontawesome/css/all.min.css" rel="stylesheet" type="text/css"/>
+    <meta name="theme-color" content="#563d7c">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .featurette-divider{
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 py-4">
+                    <h4 class="text-white">关于</h4>
+                    <p class="text-muted">为了帮助国内开发者快速下载 Github 技术文件，使用 Cloudflare Workers 进行代理下载，提升下载速度。</p>
+                </div>
+                <div class="col-sm-4 offset-md-1 py-4">
+                    <h4 class="text-white">联系</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.renfei.net" target="_blank" class="text-white">任霏博客</a></li>
+                        <li><a href="https://bbs.renfei.net" target="_blank" class="text-white">技术论坛</a></li>
+                        <li><a href="https://github.com/renfei" target="_blank" class="text-white">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+            <a href="#" class="navbar-brand d-flex align-items-center">
+                <img class="align-middle" src="https://cdn.renfei.net/Logo/RF_white.svg" height="25" alt="任霏博客">
+                <strong>GitHub 在线代理加速</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
+                    aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <i class="fab fa-github" style="font-size: 120px;"></i>
+            <h1>GitHub 在线代理加速</h1>
+            <p class="lead text-muted">
+                GitHub 文件 , Releases , archive , gist , raw.githubusercontent.com 文件代理加速下载服务.
+            </p>
+            <form action="./" method="get" target="__blank">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="input-group mb-3 col-sm-12 col-md-8">
+                        <input type="text" class="form-control form-control-lg" placeholder="输入 GitHub 文件链接" aria-label="输入 GitHub 文件链接"
+                               pattern="^((https|http):\/\/)?(github\.com\/.+?\/.+?\/(?:releases|archive|blob)|((?:raw|gist)\.(?:githubusercontent|github)\.com))\/.+$"
+                               aria-describedby="button-go" required>
+                        <div class="input-group-append">
+                            <button class="btn btn-dark" type="submit" id="button-go">下载</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div class="album py-5">
+        <div class="container">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h2 class="featurette-heading">当前页面下载 <span class="text-muted">Current page download</span></h2>
+                    <p>使用当前页面地址栏输入合规链接（参考以下链接）点击下载按钮：</p>
+                    <p>支持 <span class="red">raw.githubusercontent.com</span> , <span class="red">gist.github.com</span> , <span class="red">gist.githubusercontent.com</span> 文件下载.</p>
+                    <p>&nbsp;</p>
+                    <h4 class="text-muted">Raw 文件</h4>
+                    <p>https://raw.githubusercontent.com/renfei/start/master/LICENSE</p>
+                    <p>&nbsp;</p>
+                    <h4 class="text-muted">分支源码</h4>
+                    <p>https://github.com/renfei/start/archive/master.zip</p>
+                    <p>&nbsp;</p>
+                    <h4 class="text-muted">Releases 源码</h4>
+                    <p>https://github.com/renfei/renfei-java-sdk/archive/refs/tags/1.1.1.tar.gz</p>
+                    <p>&nbsp;</p>
+                    <h4 class="text-muted">Releases 文件</h4>
+                    <p>https://github.com/fatedier/frp/releases/download/v0.33.0/frp_0.33.0_linux_amd64.tar.gz</p>
+                </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+                <div class="col-md-12">
+                    <h2 class="featurette-heading">终端命令行 <span class="text-muted">Terminal command line</span></h2>
+                    <p>支持终端命令行 git clone , wget , curl 等工具下载.</p>
+                    <p>支持 <span class="red">raw.githubusercontent.com</span> , <span class="red">gist.github.com</span> , <span class="red">gist.githubusercontent.com</span> 文件下载.</p>
+                    <p>注意：不支持 SSH Key 方式 git clone 下载.</p>
+                    <p>&nbsp;</p>
+                    <h4 class="text-muted">git clone</h4>
+                    <p>git clone <span class="red">https://github.renfei.net/</span>https://github.com/stilleshan/ServerStatus</p>
+                    <p>&nbsp;</p>
+                    <h4 class="text-muted">wget & curl</h4>
+                    <p>wget <span class="red">https://github.renfei.net/</span>https://github.com/stilleshan/ServerStatus/archive/master.zip</p>
+                    <p>wget
+                        <span class="red">https://github.renfei.net/</span>https://raw.githubusercontent.com/stilleshan/ServerStatus/master/Dockerfile</p>
+                    <p>curl -O <span class="red">https://github.renfei.net/</span>https://github.com/stilleshan/ServerStatus/archive/master.zip</p>
+                    <p>curl -O
+                        <span class="red">https://github.renfei.net/</span>https://raw.githubusercontent.com/stilleshan/ServerStatus/master/Dockerfile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="text-muted bg-light">
+    <div class="container">
+        <p>&nbsp;</p>
+        <p>基于Cloudflare Workers</p>
+        <p>&nbsp;</p>
+    </div>
+</footer>
+<script src="https://cdn.renfei.net/thunder/js/jquery-3.5.1.min.js" type='text/javascript' charset="UTF-8"></script>
+<script src="https://cdn.renfei.net/thunder/bootstrap/js/bootstrap.min.js" type='text/javascript'
+        charset="UTF-8"></script>
+</body>
+</html>
