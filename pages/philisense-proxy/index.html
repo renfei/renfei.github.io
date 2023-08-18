@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目预览</title>
+</head>
+<body>
+<h1>说明</h1>
+<p>虽然我们在开发过程中可以使用 hosts 文件构建虚拟主机域名，但在某些场景中，例如手机APP，就很难修改 hosts 文件，并且一旦服务器 IP 发生变化，我们需要修改多处 hosts 文件。</p>
+<p>公共解析会造成私有项目在互联网中公开，所以本域名进行了防火墙拦截，不在 IP 白名单中的访问都会被拦截，可放心使用。</p>
+<h2>支持的域名</h2>
+<ul>
+    <li>__.flxapp01.renfei.net</li>
+    <li>__.flxapp02.renfei.net</li>
+    <li>__.xz.renfei.net</li>
+</ul>
+<h2>使用方法</h2>
+<p>举个例子：</p>
+<p>你在 flxapp01 服务器上配置 nginx，监听 80 端口，server_name 配置为 test.flxapp01.renfei.net</p>
+<p>访问：http://test.flxapp01.renfei.net，即可访问你的项目。</p>
+<p>如果你被防火墙拦截，那说明你的 IP 不在白名单中，需要联系 renfei 添加白名单：请先访问：<a href="http://ip.renfei.net" target="_blank">ip.renfei.net</a>，将你的 IP 地址告知我。。</p>
+<h3>支持的端口</h3>
+<p>注意：不支持 HTTPS 协议。</p>
+<ul>
+    <li>80</li>
+    <li>8080</li>
+    <li>8443</li>
+    <li>8880</li>
+    <li>2052</li>
+    <li>2053</li>
+    <li>2082</li>
+    <li>2083</li>
+    <li>2086</li>
+    <li>2087</li>
+    <li>2095</li>
+    <li>2096</li>
+</ul>
+</body>
+</html>
